@@ -13,14 +13,14 @@ class DetailsPage extends StatelessWidget {
           // print(details);
           // print(details.velocity.pixelsPerSecond.dy);
           if (details.velocity.pixelsPerSecond.dy > 0) Navigator.pop(context);
-          if (details.velocity.pixelsPerSecond.dy < 0)
+          if (details.velocity.pixelsPerSecond.dy < 0) {
             Navigator.push(
               context,
               PageRouteBuilder(
-                transitionDuration: Duration(seconds: 1),
-                reverseTransitionDuration: Duration(seconds: 1),
+                transitionDuration: const Duration(seconds: 1),
+                reverseTransitionDuration: const Duration(seconds: 1),
                 pageBuilder: (context, animation, secondaryAnimation) =>
-                    SecondDetailsPage(),
+                    const SecondDetailsPage(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                   return FadeTransition(
@@ -30,6 +30,7 @@ class DetailsPage extends StatelessWidget {
                 },
               ),
             );
+          }
         },
         child: Scaffold(
           // appBar: AppBar(
@@ -90,10 +91,10 @@ class DetailsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   Row(
                     children: [
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       for (int i = 1; i < 4; i++)
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -114,11 +115,11 @@ class DetailsPage extends StatelessWidget {
                                   ),
                                   child: Row(
                                     children: [
-                                      CircleAvatar(
+                                      const CircleAvatar(
                                         backgroundColor: Colors.black,
                                         radius: 14,
                                       ),
-                                      SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                       Text(
                                         "Name",
                                         style: Theme.of(context)
@@ -128,7 +129,7 @@ class DetailsPage extends StatelessWidget {
                                               color: Colors.white,
                                             ),
                                       ),
-                                      SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                     ],
                                   ),
                                 ),
@@ -136,10 +137,10 @@ class DetailsPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                     ],
                   ),
-                  SizedBox(height: 48),
+                  const SizedBox(height: 48),
                 ],
               ),
             ],

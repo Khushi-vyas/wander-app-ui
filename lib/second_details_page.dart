@@ -19,12 +19,12 @@ class SecondDetailsPage extends StatelessWidget {
             elevation: 0,
             leading: InkWell(
               onTap: () => Navigator.pop(context),
-              child: Icon(
+              child: const Icon(
                 Icons.close,
                 color: Colors.black,
               ),
             ),
-            actions: [
+            actions: const [
               CircleAvatar(
                 backgroundColor: Colors.grey,
               ),
@@ -47,10 +47,10 @@ class SecondDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   for (int i = 1; i < 4; i++)
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -74,16 +74,16 @@ class SecondDetailsPage extends StatelessWidget {
                               ),
                               child: Row(
                                 children: [
-                                  CircleAvatar(
+                                  const CircleAvatar(
                                     backgroundColor: Colors.black,
                                     radius: 14,
                                   ),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   Text("Name",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                 ],
                               ),
                             ),
@@ -91,15 +91,15 @@ class SecondDetailsPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     for (int i = 0; i < 4; i++)
                       Padding(
                         padding: const EdgeInsets.symmetric(
@@ -116,8 +116,8 @@ class SecondDetailsPage extends StatelessWidget {
                   ],
                 ),
               ).animate().moveY(begin: 100, end: 0, duration: 1.seconds),
-              Padding(
-                padding: const EdgeInsets.all(16),
+              const Padding(
+                padding: EdgeInsets.all(16),
                 child: Text(
                   "TRIP BOARD",
                   style: TextStyle(
@@ -129,17 +129,17 @@ class SecondDetailsPage extends StatelessWidget {
               ).animate().moveY(begin: 100, end: 0, duration: 1.seconds),
               ListView.separated(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 2,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 itemBuilder: (BuildContext context, int index) {
                   return Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: Colors.grey,
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Container(
                         width: MediaQuery.sizeOf(context).width * 0.7,
                         decoration: BoxDecoration(
@@ -148,8 +148,8 @@ class SecondDetailsPage extends StatelessWidget {
                             color: Colors.grey.shade400,
                           ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
+                        child: const Padding(
+                          padding: EdgeInsets.all(16),
                           child: Text(
                             "What a trip! Thanks for all the memories. What's next?",
                           ),
@@ -159,7 +159,7 @@ class SecondDetailsPage extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 16);
+                  return const SizedBox(height: 16);
                 },
               ).animate().moveY(begin: 100, end: 0, duration: 1.seconds),
             ],

@@ -12,13 +12,13 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: Icon(
+          leading: const Icon(
             Icons.menu,
             color: Colors.black,
           ),
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: CircleAvatar(backgroundColor: Colors.grey),
             ),
           ],
@@ -27,15 +27,15 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(16),
+              const Padding(
+                padding: EdgeInsets.all(16),
                 child: Text(
                   "Your trips",
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   "CURRENT TRIP",
                   style: TextStyle(
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MyRoute(builder: (context) => DetailsPage()),
+                          MyRoute(builder: (context) => const DetailsPage()),
                         );
                       },
                       child: Stack(
@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
                               height: 300,
                               decoration: BoxDecoration(
                                 // color: Colors.grey.shade800,
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage(
                                     "assets/trip.jpg",
                                   ),
@@ -117,16 +117,16 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 48),
+                              const SizedBox(height: 48),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       bottom: -24,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        padding: EdgeInsets.symmetric(horizontal: 24),
                         child: Stack(
                           alignment: Alignment.center,
                           clipBehavior: Clip.none,
@@ -177,9 +177,9 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.all(16),
+              const SizedBox(height: 16),
+              const Padding(
+                padding: EdgeInsets.all(16),
                 child: Text(
                   "PAST TRIPS",
                   style: TextStyle(
@@ -192,33 +192,33 @@ class HomePage extends StatelessWidget {
               GridView.builder(
                 itemCount: 5,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                   childAspectRatio: 0.8,
                 ),
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(16),
+                          padding: EdgeInsets.all(16),
                           child: Text(
                             "MAY 18,2023",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          padding: EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
                             "Roadtrip over Lorem ipsum",
                             style: TextStyle(
@@ -246,5 +246,5 @@ class MyRoute extends MaterialPageRoute {
   MyRoute({required WidgetBuilder builder}) : super(builder: builder);
 
   @override
-  Duration get transitionDuration => Duration(seconds: 1);
+  Duration get transitionDuration => const Duration(seconds: 1);
 }
